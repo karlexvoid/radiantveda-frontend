@@ -1,9 +1,10 @@
-
-// export default LoginSignupPage;
 import React, { useState } from "react";
 import axios from "axios";
-import "./LoginSignupPage.css"; // Optional: Add CSS for styling
-// const dotenv = require('dotenv');
+import "./LoginSignupPage.css"; 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext"; 
 
 const LoginSignupPage = () => {
     const [isLogin, setIsLogin] = useState(true);
@@ -11,12 +12,13 @@ const LoginSignupPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
-
+    const navigate = useNavigate();
+    const { login } = useAuth();
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Define the endpoint and data to send
-        console.log("API Base URL:", import.meta.env.VITE_API_BASE_URL);
+        // console.log("API Base URL:", import.meta.env.VITE_API_BASE_URL);
         const endpoint = isLogin
             ? `${import.meta.env.VITE_API_BASE_URL}/auth/login`
             : `${import.meta.env.VITE_API_BASE_URL}/auth/signup`;
@@ -32,25 +34,41 @@ const LoginSignupPage = () => {
                 },
             });
 
-            console.log(isLogin ? "Login successful" : "Signup successful", response.data);
+            // console.log(isLogin ? "Login successful" : "Signup successful", response.data);
 
             // Store the token in localStorage (optional)
             if (response.data.token) {
-                localStorage.setItem("token", response.data.token);
+                login(response.data.token);
+                toast.success(
+                    isLogin 
+                      ? "Welcome back! You’re now logged in. 😊" 
+                      : "Welcome aboard! Your account has been created successfully. 🎉",
+                    {
+                      position: "top-center", // Corrected position
+                      autoClose: 1000, // Closes after 3 seconds
+                      hideProgressBar: true, // Removes progress bar for a smoother feel
+                      closeOnClick: true, 
+                      pauseOnHover: true,
+                      draggable: true
+                    }
+                  );
             }
+            
 
             // Reset fields and display success message
             setName("");
             setEmail("");
             setPassword("");
             setErrorMessage(""); // Clear any errors
-            alert(isLogin ? "Login successful!" : "Signup successful!");
+
+
         } catch (error) {
             console.error("Error:", error);
             // Handle errors and display appropriate messages
-            setErrorMessage(
-                error.response?.data?.message || "An unexpected error occurred."
-            );
+            toast.warning(error.response?.data?.message || "An unexpected error occurred.");
+            // setErrorMessage(
+                
+            // );
         }
     };
 

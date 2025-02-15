@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Parisienne&display=swap');
+
+
+/* Apply font to whole app */
+body {
+  font-family: 'Poppins', sans-serif !important;
+  background-color: #fff5f8; /* Soft baby pink background */
+  color: #5a1a3e; /* Soft dark pink text */
+}
+
+/* Apply feminine cursive font to headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Parisienne', cursive !important;
+  color: #d81b60;
+}
+
+/* Apply font to buttons and links */
+button, a {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -17,6 +39,9 @@
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
+
+
+
 
 @keyframes logo-spin {
   from {

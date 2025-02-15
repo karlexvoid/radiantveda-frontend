@@ -64,7 +64,7 @@ const Routine = () => {
     };
 
     return (
-        <div>
+        <div className="questionnaire">
             <h2>Skincare Routine</h2>
             {routine ? (
                 <pre>{routine}</pre>

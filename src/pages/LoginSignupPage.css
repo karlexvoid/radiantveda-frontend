@@ -5,7 +5,9 @@
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
-    background: linear-gradient(135deg, #f3e7fe, #e5c1f9, #d6a6f1);
+    background: linear-gradient(135deg, #fef1f4, #fde7ec, #fcdde4);
+
+
     color: #333;
     animation: fadeIn 1s ease-in-out;
 }
@@ -24,9 +26,9 @@
 .login-signup-container h2 {
     margin-bottom: 20px;
     font-size: 1.8rem;
-    font-weight: bold;
-    color: #5a2d82;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    /* font-weight: bold; */
+    color: black;
+    /* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); */
 }
 
 .login-signup-container form {
@@ -48,15 +50,15 @@
 
 .login-signup-container input:focus {
     background: #fff;
-    border: 2px solid #a26bda;
-    box-shadow: 0 0 8px rgba(162, 107, 218, 0.5);
+    border: 2px solid rgb(238, 202, 208);
+    box-shadow: 0 0 8px rgba(243, 178, 235, 0.5);
 }
 
 .login-signup-container button {
     padding: 12px;
     font-size: 1rem;
     font-weight: bold;
-    background: linear-gradient(135deg, #7d48de, #5a2d82);
+    background: linear-gradient(135deg, #f497b6, #e86a92);
     color: white;
     border: none;
     border-radius: 6px;
@@ -66,11 +68,13 @@
 }
 
 .login-signup-container button:hover {
-    background: linear-gradient(135deg, #5a2d82, #7d48de);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #e391ab, #f497b6);
+    box-shadow: 0 4px 8px rgba(232, 106, 146, 0.4);
 }
 
-.toggle-button {
+
+
+/* .toggle-button {
     background: none;
     color: #5a2d82;
     border: none;
@@ -78,13 +82,17 @@
     cursor: pointer;
     text-decoration: underline;
     transition: color 0.3s ease;
-}
+} */
 
-.toggle-button:hover {
+/* .toggle-button:hover {
     color: #7d48de;
-}
+} */
 
-.toggle-button:focus {
+/* .toggle-button:focus {
     outline: none;
     text-shadow: 0 0 6px rgba(125, 72, 222, 0.5);
+} */
+
+.login-signup-container p{
+    margin-top : 30px;
 }

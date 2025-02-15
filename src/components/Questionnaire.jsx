@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 function Questionnaire() {
     const [skinType, setSkinType] = useState('');
     const [skinSensitivity, setSkinSensitivity] = useState('');
@@ -17,6 +19,8 @@ function Questionnaire() {
     const [skinConditions, setSkinConditions] = useState('');
     const [skinConditionsText, setSkinConditionsText] = useState('');
     const [currentStep, setCurrentStep] = useState(1);
+
+    const navigate = useNavigate(); 
 
     // Handle radio and checkbox changes for each question
     const handleChange = (setter) => (event) => setter(event.target.value);
@@ -75,7 +79,23 @@ function Questionnaire() {
                     "x-auth-token": localStorage.getItem("token"), // Ensure token is stored
                 },
             });
-            console.log('form saved successfully');
+            if(response.data.status_code){
+               console.log(response)
+                toast.success(
+                    response.data.status_code == 1
+                        ? "Questionnaire updated successfully" 
+                        : "Questionnaire created successfully",
+                        {
+                            position: "top-right", // Corrected position
+                            autoClose: 1000, // Closes after 3 seconds
+                            hideProgressBar: true, // Removes progress bar for a smoother feel
+                            closeOnClick: true, 
+                            pauseOnHover: true,
+                            draggable: true
+                        }
+                    );
+                    navigate("/routine");
+            }
         } catch (error) {
             console.error("Error:", error);
             // Handle errors and display appropriate messages
@@ -677,7 +697,7 @@ function Questionnaire() {
                 )}
 
                 {/* Navigation Buttons */}
-                <div>
+                <div className="questionareButtonsDiv">
                     {currentStep > 1 && <button type="button" onClick={goToPreviousStep}>Go Back</button>}
                     {currentStep < 12 ? (
                         <button type="button" onClick={goToNextStep}>Next</button>

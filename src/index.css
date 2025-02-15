@@ -1,5 +1,5 @@
 /* Header Styling */
-.header {
+/* .header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,8 +10,20 @@
   color: rgb(5, 1, 1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-bottom: 4px solid #4b2678;
+} */
+.nav-link {
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+  font-weight: 500; /* Slightly bold for elegance */
 }
 
+.nav-link:hover,.active-nav {
+  color: #ff69b4 !important; /* Soft pink on hover */
+  /* text-decoration: underline; Underline on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  background-color: rgba(255, 182, 193, 0.3); /* Light pink */
+  border-radius: 5px;
+  padding: 5px 10px;
+}
 .title {
   font-size: 3rem;
   font-weight: bold;
@@ -70,7 +82,7 @@ nav ul li a:active {
 /* Questionnaire Styling */
 .questionnaire {
   padding: 30px;
-  background: linear-gradient(145deg, #fdfdfd, #ececec);
+  background: linear-gradient(145deg, #fff5f8, #fff5f8);
   margin: 30px auto;
   max-width: 700px;
   border-radius: 15px;
@@ -118,7 +130,7 @@ nav ul li a:active {
 }
 
 .questionnaire button {
-  background: linear-gradient(135deg, #12caec, #0aabc4);
+  background: linear-gradient(135deg, #f497b6, #e86a92);
   color: white;
   border: none;
   padding: 12px 20px;
@@ -130,9 +142,14 @@ nav ul li a:active {
 }
 
 .questionnaire button:hover {
-  background: linear-gradient(135deg, #0aabc4, #007ea6);
+  background: linear-gradient(135deg, #e86a92, #d8567b);
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(232, 106, 146, 0.4);
+}
+
+.questionnaire .questionareButtonsDiv{
+    display: flex;
+    justify-content: space-between;
 }
 
 .questionnaire button:active {
