@@ -27,7 +27,7 @@ const HomePage = () => {
                 {/* Right Section - Image */}
                 <div>
                     <img 
-                        src="./public/hero.webp" 
+                        src="./hero.webp" 
                         alt="Skincare AI Routine" 
                         className="heroImage"
                     />
