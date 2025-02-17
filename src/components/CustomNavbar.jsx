@@ -23,14 +23,15 @@ const CustomNavbar = () => {
                         {token && <Nav.Link as={Link} to="/questionnaire" className="text-dark fw-medium px-4">Questionnaire</Nav.Link>}
                         {token && <Nav.Link as={Link} to="/routine" className="text-dark fw-medium px-4">Routine</Nav.Link>}
                     </Nav>
-                </Navbar.Collapse>
-
-                {/* Right Side - Login/Signup Buttons */}
+                                    {/* Right Side - Login/Signup Buttons */}
                 <div className="d-flex gap-2">
                     {!token && <Button as={Link} to="/auth" variant="outline-success">Login / SignUp</Button>}
                     {token && <Button as={Link} onClick={logout} variant="outline-danger">Logout</Button>}
                     
                 </div>
+                </Navbar.Collapse>
+
+
             </Container>
         </Navbar>
     );

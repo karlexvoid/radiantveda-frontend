@@ -17,10 +17,10 @@
 }
 
 .nav-link:hover,.active-nav {
-  color: #ff69b4 !important; /* Soft pink on hover */
+  color: #522b1e !important; /* Soft pink on hover */
   /* text-decoration: underline; Underline on hover */
   transform: scale(1.1); /* Slightly enlarge on hover */
-  background-color: rgba(255, 182, 193, 0.3); /* Light pink */
+  background-color: rgba(230, 139, 139, 0.3); /* Light pink */
   border-radius: 5px;
   padding: 5px 10px;
 }
@@ -61,6 +61,7 @@ nav ul li a:hover {
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
 }
 
+
 nav ul li a:active {
   transform: scale(0.95);
 }
@@ -82,7 +83,7 @@ nav ul li a:active {
 /* Questionnaire Styling */
 .questionnaire {
   padding: 30px;
-  background: linear-gradient(145deg, #fff5f8, #fff5f8);
+  background: linear-gradient(145deg, #f4e9df, #fff5f8);
   margin: 30px auto;
   max-width: 700px;
   border-radius: 15px;
@@ -130,7 +131,7 @@ nav ul li a:active {
 }
 
 .questionnaire button {
-  background: linear-gradient(135deg, #f497b6, #e86a92);
+      background: linear-gradient(135deg, #d5bdb5, #be736f);
   color: white;
   border: none;
   padding: 12px 20px;
@@ -142,7 +143,7 @@ nav ul li a:active {
 }
 
 .questionnaire button:hover {
-  background: linear-gradient(135deg, #e86a92, #d8567b);
+  background: linear-gradient(135deg, #be736f, #d5bdb5);
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(232, 106, 146, 0.4);
 }
@@ -310,10 +311,13 @@ nav ul li a:active {
 .about-page a:hover {
   text-decoration: underline;
 }
-
+.heroImage{
+  width: 600px;
+  border-radius: 50px;
+}
 /* Optional: Adding responsiveness */
 @media (max-width: 768px) {
-  .about-page {
+  /* .about-page {
     padding: 20px;
   }
 
@@ -323,5 +327,66 @@ nav ul li a:active {
 
   .about-page p {
     font-size: 1rem;
+  } */
+
+  .homepageInnerDiv {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
   }
+  .heroImage {
+    width: 390px;
+    border-radius: 50px;
+    height: 316px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+
+
+.homepageInnerDiv{
+  display: flex;
+  justify-content: space-around;
+}
+
+.homepageLeftDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.homepageText{
+  font-size: 1.8rem;
+  color: #555;
+  text-align: center;
+  font-weight: 400;
+  padding-inline: 50px;
+}
+
+.homepageInnerDiv button {
+      background: linear-gradient(135deg, #d5bdb5, #be736f);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.homepageInnerDiv button:hover {
+  background: linear-gradient(135deg, #be736f, #d5bdb5);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(232, 106, 146, 0.4);
+}
+
+.homepageInnerDiv button:active {
+  transform: scale(0.98);
+}
+
+.homepageMainDiv{
+  margin-top: 6%;
+  margin-bottom: 6%;
 }

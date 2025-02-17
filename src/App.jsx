@@ -12,7 +12,7 @@ import { AuthProvider } from "./context/AuthContext";
 import { ProtectedRoute, PublicRoute } from './components/ProtectedRoute';
 import "bootstrap/dist/css/bootstrap.min.css";
 import CustomNavbar from "./components/CustomNavbar";
-
+import HomePage from "./pages/HomePage";
 function App() {
     return (
         <AuthProvider>
@@ -23,7 +23,7 @@ function App() {
                 <div className="container mt-5">
                 <Routes>
                     {/* Public Routes (Accessible to all) */}
-                    <Route path="/" element={<h2>Welcome to RadiantVedaAI</h2>} />
+                    <Route path="/" element={<HomePage></HomePage>} />
                     {/* <Route path="/about" element={<About />} /> */}
 
                     {/* Public Only Routes (Cannot be accessed when logged in) */}
