@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 // import "../assets/styles/Routine.css";
-const Routine = () => {
+const Beautytips = () => {
     const [questionnaire, setQuestionnaire] = useState(null);
     const [routine, setRoutine] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -33,7 +33,7 @@ const Routine = () => {
         setLoading(true);
         try {
             const prompt = `
-                Based on the following skincare details, generate a personalized skincare routine:
+                Based on the following skincare details, generate a personalized beauty tips:
                 - Age Group: ${questionnaire.ageGroup}
                 - Skin Type: ${questionnaire.skinType}
                 - Skin Sensitivity: ${questionnaire.skinSensitivity}
@@ -49,16 +49,10 @@ const Routine = () => {
                     **Your skin**
                     a short paragraph of the skin is based on the info provided
 
-                    **Morning Routine:**
-                    1. [Step name]: [Short explanation]
-                    2. [Step name]: [Short explanation]
-                    3. [Step name]: [Short explanation]
-                    ..... steps can be more if required
-
-                    **Night Routine:**
-                    1. [Step name]: [Short explanation]
-                    2. [Step name]: [Short explanation]
-                    3. [Step name]: [Short explanation]
+                    **Beauty Tips:**
+                    1. [tip]: [Short explanation]
+                    2. [tip ]: [Short explanation]
+                    3. [tip]: [Short explanation]
                     ..... steps can be more if required
 
                     **Rules:**
@@ -67,7 +61,7 @@ const Routine = () => {
                     - Do NOT include any text outside the specified format.
                     - Ensure each step is concise and to the point.
 
-                    Now generate the skincare routine in the exact format above.
+                    Now generate the skincare beauty tips in the exact format above.
             `;
 
             const aiResponse = await axios.post(
@@ -115,7 +109,7 @@ const Routine = () => {
     return (
         <div className="questionnaire">
         <div className="routine-container">
-            <h2>Skincare Routine</h2>
+            <h2>Beauty Tips</h2>
             {routine ? (
                 <div className="routine-content">
                     {routine.map((section, index) => (
@@ -135,7 +129,7 @@ const Routine = () => {
                 </div>
             ) : (
                 <button onClick={generateRoutine} disabled={loading}>
-                    {loading ? "Generating..." : "Generate Routine"}
+                    {loading ? "Generating..." : "Generate Beauty Tips"}
                 </button>
             )}
         </div>
@@ -143,4 +137,4 @@ const Routine = () => {
     );
 };
 
-export default Routine;
+export default Beautytips;

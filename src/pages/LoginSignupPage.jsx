@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./LoginSignupPage.css"; 
+// import "../assets/styles/LoginSignupPage.css";
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext"; 
 

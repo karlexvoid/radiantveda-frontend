@@ -1,0 +1,377 @@
+/* Apply feminine cursive font to headings */
+h1, h2, h3, h4, h5, h6 ,.footer{
+    font-family: 'Parisienne', cursive !important;
+  }
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .main-content {
+    flex: 1; /* Pushes the footer down */
+    padding-bottom: 20px; /* Prevents overlap */
+  }
+  
+  /* Apply font to buttons and links */
+  button, a {
+    font-family: 'Poppins', sans-serif !important;
+  }
+
+  button:hover{
+    background: linear-gradient(135deg, #be736f, #d5bdb5);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(253, 146, 146, 0.4);
+  }
+.nav-link {
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+    font-weight: 500; /* Slightly bold for elegance */
+  }
+  
+  .navbar .container{
+    padding-block: 15px;
+  }
+
+  .nav-link:hover,.active-nav {
+    color: #522b1e !important;
+    transform: scale(1.1); 
+    background-color: rgba(230, 139, 139, 0.3); 
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  /* .nav-link:hover {
+    color: #522b1e !important;
+    transform: scale(1.1);
+    padding: 5px 10px;
+    
+    background: rgba(230, 139, 139, 0.6);
+    clip-path: polygon(5% 30%, 15% 10%, 35% 0%, 65% 10%, 85% 0%, 95% 30%, 90% 60%, 70% 90%, 30% 100%, 10% 80%);
+} */
+  .title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap; /* Makes it responsive */
+  }
+  
+  nav ul li {
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #f0e6ff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+  }
+  
+  
+  nav ul li a:active {
+    transform: scale(0.95);
+  }
+  
+  @media (max-width: 768px) {
+    .navbar-nav{
+      padding-block: 20px;
+    }
+    .title {
+      font-size: 2rem;
+    }
+  
+    nav ul {
+      gap: 15px;
+    }
+  
+    nav ul li a {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Questionnaire Styling */
+  .questionnaire {
+    padding: 30px;
+    background: linear-gradient(145deg, #f4dfdf, #fff5f8);
+    margin: 30px auto;
+    max-width: 700px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .questionnaire h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    color: #444;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .questionnaire form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .questionnaire label {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .questionnaire input[type="radio"], 
+  .questionnaire input[type="checkbox"] {
+    margin-right: 12px;
+    transform: scale(1.2);
+    accent-color: #0aabc4; /* Adds color to radio and checkboxes */
+  }
+  
+  .questionnaire input[type="text"],
+  .questionnaire select,
+  .questionnaire textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .questionnaire button {
+        background: linear-gradient(135deg, #d5bdb5, #be736f);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    align-self: flex-end; /* Aligns button to the right */
+  }
+  
+
+  .questionnaire .questionareButtonsDiv{
+      display: flex;
+      justify-content: space-between;
+  }
+  
+  .questionnaire button:active {
+    transform: scale(0.98);
+  }
+  
+  @media (max-width: 768px) {
+    .questionnaire {
+      padding: 20px;
+      margin: 20px;
+    }
+  
+    .questionnaire h2 {
+      font-size: 1.8rem;
+    }
+  
+    .questionnaire button {
+      font-size: 1rem;
+      align-self: center; /* Centers button for smaller screens */
+    }
+  }
+  
+  /* Intro Text */
+  .routine-page p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0.8rem 0;
+    text-align: center;
+  }
+  
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .routine-page {
+        padding: 1rem;
+    }
+  
+    .routine-page h2 {
+        font-size: 1.5rem;
+    }
+  
+    .routine-tips h3 {
+        font-size: 1.2rem;
+    }
+  
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+  }
+
+  .heroImage{
+    width: 600px;
+    border-radius: 50px;
+  }
+  /* Optional: Adding responsiveness */
+  @media (max-width: 768px) {
+
+    .homepageInnerDiv {
+      display: flex;
+      flex-direction: column;
+      align-content: stretch;
+    }
+    .heroImage {
+      width: 390px;
+      border-radius: 50px;
+      height: 316px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+  
+  
+  
+  .homepageInnerDiv{
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .homepageLeftDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .homepageText{
+    font-size: 1.8rem;
+    color: #555;
+    text-align: center;
+    font-weight: 400;
+    padding-inline: 50px;
+  }
+  
+  .homepageInnerDiv button {
+        background: linear-gradient(135deg, #d5bdb5, #be736f);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+
+  .homepageInnerDiv button:active {
+    transform: scale(0.98);
+  }
+  
+  .homepageMainDiv{
+    margin-top: 6%;
+    margin-bottom: 6%;
+  }
+
+
+  .login-signup-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background: linear-gradient(145deg, #f4dfdf, #fff5f8);
+
+
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-signup-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: black;
+}
+
+.login-signup-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-signup-container input {
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.login-signup-container input:focus {
+    background: #fff;
+    border: 2px solid rgb(238, 202, 208);
+    box-shadow: 0 0 8px rgba(243, 178, 235, 0.5);
+}
+
+.login-signup-container button {
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #d5bdb5, #be736f);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+.login-signup-container p{
+    margin-top : 30px;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  background-color: rgb(247 232 232 / 8%);;
+  color: #333;
+  font-size: 30px;
+  /* border-top: 1px solid #ddd; */
+  display: flex;
+  justify-content: space-around;
+  margin-top: auto;
+}

@@ -1,12 +1,12 @@
 import { Navbar, Nav, Button, Container } from "react-bootstrap";
 import { Link , useLocation} from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-
+// import "../assets/styles/CustomNavbar.css";
 const CustomNavbar = () => {
     const { token, logout } = useAuth();
     
-    return (
-        <Navbar expand="lg" style={{ backgroundColor: "white" }} className="shadow-sm">
+    return (    
+        <Navbar expand="lg"style={{ backgroundColor: "rgba(247, 232, 232, 0.08)", zIndex: 1000 }} className="shadow-sm">
             <Container>
                 {/* Logo */}
                 <Navbar.Brand as={Link} to="/" className=" text-pink">
@@ -22,6 +22,8 @@ const CustomNavbar = () => {
                         {token && <Nav.Link as={Link} to="/" className="text-dark fw-medium px-4">Home</Nav.Link>}
                         {token && <Nav.Link as={Link} to="/questionnaire" className="text-dark fw-medium px-4">Questionnaire</Nav.Link>}
                         {token && <Nav.Link as={Link} to="/routine" className="text-dark fw-medium px-4">Routine</Nav.Link>}
+                        {token && <Nav.Link as={Link} to="/beautytips" className="text-dark fw-medium px-4">Beauty Tips</Nav.Link>}
+                        {token && <Nav.Link as={Link} to="/skinconcern" className="text-dark fw-medium px-4">Skin Concern Solutions</Nav.Link>}
                     </Nav>
                                     {/* Right Side - Login/Signup Buttons */}
                 <div className="d-flex gap-2">

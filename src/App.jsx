@@ -1,11 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
 import LoginSignupPage from "./pages/LoginSignupPage"; // Adjust path if necessary
-import Questionnaire from "./components/Questionnaire"; // Adjust path if necessary
-// import ProtectedRoute from './components/ProtectedRoute'; // Import the PrivateRoute component
+import Questionnaire from "./pages/Questionnaire"; // Adjust path if necessary
 import Routine from "./pages/Routine";  // Import the Routine page
-import About from "./pages/About";  // Import the About page
+import Beautytips from "./pages/Beautytips";  // Import the Routine page
+import Skinconcern from "./pages/Skinconcern";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthProvider } from "./context/AuthContext";
@@ -13,6 +12,7 @@ import { ProtectedRoute, PublicRoute } from './components/ProtectedRoute';
 import "bootstrap/dist/css/bootstrap.min.css";
 import CustomNavbar from "./components/CustomNavbar";
 import HomePage from "./pages/HomePage";
+import Footer from "./components/Footer";
 function App() {
     return (
         <AuthProvider>
@@ -32,8 +32,11 @@ function App() {
                     {/* Private Routes (Restricted to logged-in users) */}
                     <Route path="/questionnaire" element={<ProtectedRoute><Questionnaire /></ProtectedRoute>} />
                     <Route path="/routine" element={<ProtectedRoute><Routine /></ProtectedRoute>} />
+                    <Route path="/beautytips" element={<ProtectedRoute><Beautytips /></ProtectedRoute>} />
+                    <Route path="/skinconcern" element={<ProtectedRoute><Skinconcern /></ProtectedRoute>} />
                 </Routes>
                 </div>
+                <Footer />
                 <ToastContainer />
             </Router>
         </AuthProvider>
